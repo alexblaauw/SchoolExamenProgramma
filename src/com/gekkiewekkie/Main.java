@@ -1,7 +1,8 @@
 package com.gekkiewekkie;
 
-import com.gekkiewekkie.commandline.interfaces.MainInterface;
-import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
+import com.gekkiewekkie.clinterfaces.MainInterface;
+import com.gekkiewekkie.commandline.MultipleLetterChoice;
+import com.gekkiewekkie.commandline.MultipleNumberChoice;
 
 import java.util.ArrayList;
 
