@@ -1,5 +1,6 @@
 package com.gekkiewekkie;
 
+import com.gekkiewekkie.clinterfaces.MainInterface;
 import com.gekkiewekkie.commandline.MultipleLetterChoice;
 import com.gekkiewekkie.commandline.MultipleNumberChoice;
 
@@ -16,5 +17,10 @@ public class Main {
         choice.initChoice();
         int i = choice.awaitResponse();
         System.out.println("Index of answer provided: " + i);
+
+        // Voorbeeld van hoe je een interface presenteert in dit programma:
+        MainInterface mainInterface = new MainInterface();
+        mainInterface.runInterface();
+        // De runInterface functie kan uitgevuld worden met een stel print statements, multiple choices, etc.
     }
 }
