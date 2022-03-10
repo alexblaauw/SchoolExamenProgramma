@@ -1,4 +1,4 @@
-package com.gekkiewekkie.clinterfaces;
+package com.gekkiewekkie.commandline.interfaces;
 
 public class MainInterface implements IInterface {
     @Override

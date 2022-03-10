@@ -1,4 +1,4 @@
-package com.gekkiewekkie.commandline;
+package com.gekkiewekkie.student;
 import java.util.ArrayList;
 
 public class StudentenLijst {
