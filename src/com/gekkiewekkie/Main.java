@@ -2,6 +2,7 @@ package com.gekkiewekkie;
 
 import com.gekkiewekkie.commandline.MultipleLetterChoice;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Main {
@@ -14,5 +15,6 @@ public class Main {
         choice.initChoice();
         int i = choice.awaitResponse();
         System.out.println("Index of answer provided: " + i);
+        System.out.println("");
     }
 }
