@@ -6,5 +6,4 @@ public class StudentenLijst {
     public static void StudentenLijst() {
 
     }
-
 }
