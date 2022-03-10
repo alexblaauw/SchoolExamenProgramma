@@ -10,7 +10,7 @@ public class Main {
         ArrayList<String> choices = new ArrayList<String>();
         choices.add("Test1");
         choices.add("Test2");
-        MultipleLetterChoice choice = new MultipleLetterChoice("Multiple choice vraag", 2, choices);
+        MultipleLetterChoice choice = new MultipleLetterChoice("Trying testing", 2, choices);
         choice.initChoice();
         int i = choice.awaitResponse();
         System.out.println("Index of answer provided: " + i);
