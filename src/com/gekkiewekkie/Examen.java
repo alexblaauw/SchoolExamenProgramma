@@ -3,7 +3,7 @@ package com.gekkiewekkie;
 class Examen {
     int aantalVragen;
 
-    public Examen(int aantalVragen) {
+    public Examen(Integer aantalVragen) {
         this.aantalVragen = aantalVragen;
     }
 }
@@ -11,7 +11,7 @@ class Examen {
 class Vraag {
     String titel;
     String soortVraag;
-    int vraagNummer;
+    Integer vraagNummer;
 
     public Vraag(String titel, String soortVraag) {
         this.titel = titel;
