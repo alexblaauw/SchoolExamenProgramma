@@ -1,4 +1,4 @@
-package com.gekkiewekkie.student;
+package com.gekkiewekkie.Person;
 
 public class Student {
     private String name;
