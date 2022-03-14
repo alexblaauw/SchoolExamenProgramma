@@ -2,10 +2,10 @@ package com.gekkiewekkie.Person;
 import java.util.ArrayList;
 
 public class StudentenList {
-    static ArrayList<Student> studentenLijst = new ArrayList<Student>();
+    static ArrayList<Person> studentenLijst = new ArrayList<Person>();
 
-    public static ArrayList<Student> StudentenLijst() {
-        studentenLijst.add(new Student("Henk", 21104964, 19));
+    public static ArrayList<Person> StudentenLijst() {
+        studentenLijst.add(new Teacher("Henk", 65));
         studentenLijst.add(new Student("", 12304987, 18));
         studentenLijst.add(new Student("", 12304987, 18));
         studentenLijst.add(new Student("", 12304987, 18));

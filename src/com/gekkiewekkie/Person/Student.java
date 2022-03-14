@@ -1,25 +1,10 @@
 package com.gekkiewekkie.Person;
 
-public class Student {
-    private String name;
-    private Integer studentNummer;
-    private Integer leeftijd;
+public class Student extends Person{
+    public Integer studentNummer;
 
-    public Student(String name, Integer studentNummer, Integer leeftijd) {
-        this.name = name;
+    public Student(String name, Integer leeftijd, Integer studentNummer) {
+        super(name, leeftijd);
         this.studentNummer = studentNummer;
-        this.leeftijd = leeftijd;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getStudentNummer() {
-        return studentNummer;
-    }
-
-    public Integer getLeeftijd() {
-        return leeftijd;
     }
 }
