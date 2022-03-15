@@ -3,7 +3,9 @@ package com.gekkiewekkie;
 import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
 import com.gekkiewekkie.commandline.core.YesNoChoice;
 import com.gekkiewekkie.commandline.interfaces.MainInterface;
+import com.gekkiewekkie.exam.ResultIOHandler;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
@@ -12,6 +14,15 @@ public class Main {
         ArrayList<String> choices = new ArrayList<>();
         choices.add("Test1");
         choices.add("Test2");
+
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(27);
+
+        ResultIOHandler ioHandler = new ResultIOHandler();
+        ioHandler.saveArrayList(list, "list.json");
+        ArrayList<Integer> newList = ioHandler.loadArrayList("list.json");
+        System.out.println(newList.get(1));
 
         YesNoChoice choice = new YesNoChoice("Trying testing", "hai", "iie");
         choice.initChoice();
