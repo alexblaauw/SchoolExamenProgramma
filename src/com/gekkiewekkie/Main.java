@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<String> choices = new ArrayList<>();
+        /*ArrayList<String> choices = new ArrayList<>();
         choices.add("Test1");
         choices.add("Test2");
 
@@ -32,11 +32,13 @@ public class Main {
         YesNoChoice choice2 = new YesNoChoice("Trying testing", "hai", "iie");
         choice.initChoice();
         int i2 = choice.awaitResponse();
-        System.out.println("Index of answer provided: " + i);
+        System.out.println("Index of answer provided: " + i);*/
 
         // Voorbeeld van hoe je een interface presenteert in dit programma:
         MainInterface mainInterface = new MainInterface();
         mainInterface.runInterface();
         // De runInterface functie kan uitgevuld worden met een stel print statements, multiple choices, etc.
+        Examen Examen1 = new Examen(3);
+        Examen1.Examen1();
     }
 }
