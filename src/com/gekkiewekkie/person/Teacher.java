@@ -1,4 +1,4 @@
-package com.gekkiewekkie.Person;
+package com.gekkiewekkie.person;
 
 public class Teacher extends Person{
 
