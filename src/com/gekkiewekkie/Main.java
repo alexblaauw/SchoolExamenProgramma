@@ -40,5 +40,7 @@ public class Main {
         // De runInterface functie kan uitgevuld worden met een stel print statements, multiple choices, etc.
         Examen Examen1 = new Examen(3);
         Examen1.Examen1();
+        Examen Examen2 = new Examen(3);
+        Examen2.Examen2();
     }
 }
