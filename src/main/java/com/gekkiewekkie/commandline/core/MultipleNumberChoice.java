@@ -1,10 +1,17 @@
 package com.gekkiewekkie.commandline.core;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MultipleNumberChoice extends CommandLineChoice {
     private boolean endingZero; // Whether the last item in the list should be listed as 0 instead of its actual number in this list
+    public MultipleNumberChoice(String title, String... choices) {
+        this(title, choices.length, (ArrayList<String>) Arrays.asList(choices));
+    }
+    public MultipleNumberChoice(String title, boolean endingZero, String... choices) {
+        this(title, choices.length, (ArrayList<String>)Arrays.asList(choices), endingZero);
+    }
     public MultipleNumberChoice(String title, int choiceCount, ArrayList<String> choiceTitles, boolean endingZero) {
         super(title, choiceCount, choiceTitles);
         this.endingZero = endingZero;

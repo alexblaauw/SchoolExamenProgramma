@@ -1,9 +1,14 @@
 package com.gekkiewekkie.commandline.core;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.function.Supplier;
 
 public class MultipleLetterChoice extends CommandLineChoice{
+    public MultipleLetterChoice(String title, String... choices) {
+        this(title, choices.length, (ArrayList<String>)Arrays.asList(choices));
+    }
     public MultipleLetterChoice(String title, int choiceCount, ArrayList<String> choiceTitles) {
         super(title, choiceCount, choiceTitles);
         if (choiceCount > 26) {
