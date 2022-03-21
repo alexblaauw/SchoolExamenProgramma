@@ -2,7 +2,7 @@ package com.gekkiewekkie.person;
 
 import java.util.ArrayList;
 
-public class StudentenList {
+public class PersonsList {
     private static ArrayList<Person> personenLijst = new ArrayList<Person>();
 
     public   static ArrayList<Person> StudentenLijst() {
