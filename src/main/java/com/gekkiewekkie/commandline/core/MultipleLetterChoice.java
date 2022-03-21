@@ -32,9 +32,11 @@ public class MultipleLetterChoice extends CommandLineChoice{
             String s = scanner.nextLine();
             if (s.length() != 1) {
                 System.out.println("Failed to parse response '" + s + "'");
+                System.out.print("Enter your answer: ");
             }
             else if ((int)(s.toUpperCase().charAt(0)) - 65 < 0 || (int)(s.toUpperCase().charAt(0)) - 65 > getChoiceCount() - 1) {
                 System.out.println("Failed to parse response'" + s + "'");
+                System.out.print("Enter your answer: ");
             }
             else {
                 return (int)(s.toUpperCase().charAt(0)) - 65;

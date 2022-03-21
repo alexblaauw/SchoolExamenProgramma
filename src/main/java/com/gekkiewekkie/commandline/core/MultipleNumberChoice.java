@@ -40,6 +40,7 @@ public class MultipleNumberChoice extends CommandLineChoice {
         while (true) {
             if (!scanner.hasNextInt()) {
                 System.out.println("Failed to parse response '" + scanner.nextLine() + "'");
+                System.out.print("Enter your answer: ");
             } else {
                 output = scanner.nextInt();
                 if (output == 0 && endingZero) {
@@ -49,6 +50,7 @@ public class MultipleNumberChoice extends CommandLineChoice {
                     break;
                 } else {
                     System.out.println("Failed to parse response '" + output + "'");
+                    System.out.print("Enter your answer: ");
                 }
             }
         }
