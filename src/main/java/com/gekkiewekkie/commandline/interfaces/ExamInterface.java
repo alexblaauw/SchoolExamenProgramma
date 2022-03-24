@@ -6,7 +6,7 @@ import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
 
 public class ExamInterface implements IInterface {
     public ExamInterface(Examen... e) {
-        MultipleNumberChoice examChoice = new MultipleNumberChoice("Kies welk examen u wilt maken:", false,
+        MultipleNumberChoice examChoice = new MultipleNumberChoice("Kies welk examen u wilt maken:", true,
                 "Kennis en inzicht",
                 "Speciale verkeerssituaties",
                 "Cancel");
