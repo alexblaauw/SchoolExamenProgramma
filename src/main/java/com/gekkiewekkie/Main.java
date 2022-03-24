@@ -2,6 +2,8 @@ package com.gekkiewekkie;
 
 import com.gekkiewekkie.commandline.interfaces.ExamInterface;
 import com.gekkiewekkie.commandline.interfaces.MainInterface;
+import com.gekkiewekkie.person.Student;
+import com.gekkiewekkie.person.StudentList;
 
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ public class Main {
      */
 
     public static void main(String[] args) {
+        StudentList.StudentenLijst();
         MainInterface mainInterface = new MainInterface();
         mainInterface.runInterface();
     }
@@ -23,6 +26,7 @@ public class Main {
     }
 
     public static void lijstStudenten(){
+        StudentList.printStudenten();
 
     }
 
