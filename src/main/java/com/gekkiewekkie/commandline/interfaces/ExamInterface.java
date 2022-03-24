@@ -23,7 +23,8 @@ public class ExamInterface implements IInterface {
                 Examen2.Examen2();
                 break;
             case 2:
-                Main.standaardKeuzes();
+                MainInterface mainInterface = new MainInterface();
+                mainInterface.runInterface();
                 break;
         }
     }
