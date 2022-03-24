@@ -1,12 +1,7 @@
 package com.gekkiewekkie;
 
-import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
-import com.gekkiewekkie.commandline.core.YesNoChoice;
-import com.gekkiewekkie.commandline.interfaces.MainInterface;
-import com.gekkiewekkie.exam.ResultIOHandler;
+import com.gekkiewekkie.person.PersonsList;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -48,10 +43,12 @@ public class Main {
     }
 
     public static void lijstStudenten(){
+        PersonsList.printStudenten();
 
     }
 
     public static void nieuweStudentInschrijven(){
+        //PersonsList.
 
     }
 
