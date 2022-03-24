@@ -13,7 +13,7 @@ public class MultipleNumberChoice extends CommandLineChoice {
         this(title, choices.length, new ArrayList<>(List.of(choices)));
     }
     public MultipleNumberChoice(String title, boolean endingZero, String... choices) {
-        this(title, choices.length, (ArrayList<String>)Arrays.asList(choices), endingZero);
+        this(title, choices.length, new ArrayList<>(List.of(choices)), endingZero);
     }
     public MultipleNumberChoice(String title, int choiceCount, ArrayList<String> choiceTitles, boolean endingZero) {
         super(title, choiceCount, choiceTitles);
