@@ -6,9 +6,9 @@ import com.gekkiewekkie.exam.ResultIOHandler;
 import java.util.ArrayList;
 
 public class Examen {
-    int aantalVragen;
-    int totaalScore;
-    String name;
+    private int aantalVragen;
+    private int totaalScore;
+    private String name;
 
     public Examen(int aantalVragen) {
         this.aantalVragen = aantalVragen;
