@@ -1,5 +1,7 @@
 package com.gekkiewekkie.commandline.core;
 
+import com.gekkiewekkie.commandline.core.CommandLineChoice;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
