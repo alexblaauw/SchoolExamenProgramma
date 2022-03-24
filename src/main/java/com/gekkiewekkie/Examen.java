@@ -11,6 +11,28 @@ class Examen {
 
     public Examen(int aantalVragen) {
         this.aantalVragen = aantalVragen;
+        MultipleNumberChoice examenkeuze;
+        examenkeuze = new MultipleNumberChoice("Kies welk examen u wilt maken:",
+                "Examen 1: Kennis en inzicht",
+                "Examen 2: Speciale verkeerssituaties",
+                "Cancel");
+        examenkeuze.initChoice();
+        int keuze = examenkeuze.awaitResponse();
+        if (keuze == 0) {
+            System.out.println();
+            Examen1();
+        }
+        if (keuze == 1) {
+            System.out.println();
+            Examen2();
+        }
+        if (keuze == 2) {
+            return;
+        }
+        else {
+            System.out.println("Geen geldige keuze");
+            return;
+        }
     }
 
     public void Examen1() {
@@ -84,6 +106,7 @@ class Examen {
         System.out.println("Totaalscore: " + totaalScore + "\n");
         exam1Answers.add(answer);
         ioHandler.saveArrayList(exam1Answers, "src/main/resources/exam1answers.json");
+        return;
     }
 
     public void Examen2() {
@@ -156,5 +179,6 @@ class Examen {
         System.out.println("Totaalscore: " + totaalScore + "\n");
         exam1Answers.add(answer);
         ioHandler.saveArrayList(exam1Answers, "src/main/resources/exam2answers.json");
+        return;
     }
 }
