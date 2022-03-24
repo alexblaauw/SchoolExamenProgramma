@@ -1,17 +1,16 @@
 package com.gekkiewekkie;
 
-import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
-import com.gekkiewekkie.commandline.core.YesNoChoice;
-import com.gekkiewekkie.commandline.interfaces.MainInterface;
-import com.gekkiewekkie.exam.ResultIOHandler;
+import com.gekkiewekkie.commandline.interfaces.ExamInterface;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        standaardKeuzes();
+    }
+
+    public static void standaardKeuzes() {
         Scanner scanner = new Scanner(System.in);
         boolean actief = true;
         System.out.println("""
@@ -60,10 +59,8 @@ public class Main {
     }
 
     public static void examenAfnemen() {
-        Examen Examen1 = new Examen(3);
-        Examen1.Examen1();
-        Examen Examen2 = new Examen(3);
-        Examen2.Examen2();
+        ExamInterface examInterface = new ExamInterface();
+        examInterface.runInterface();
     }
 
     public static void isStudentGeslaagdVoorTest(){
