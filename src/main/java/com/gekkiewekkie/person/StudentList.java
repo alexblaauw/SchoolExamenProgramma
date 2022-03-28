@@ -31,19 +31,30 @@ public class StudentList {
 
         studentLijst.add(new Student(naam, leeftijd, studentNummer));
 
-
     }
-    public static void printStudenten(){
+
+    public void removeStudent(String naam, Integer leeftijd, Integer studentNummer){
+        int teller = 0;
         for (int i = 0; i < studentLijst.size(); i++) {
-            //System.out.println(personenLijst.get(i).getClass().toString());
-            if (studentLijst.get(i).getClass().toString().equals("class com.gekkiewekkie.person.Student")){
-                //System.out.println("gelukt" + studentLijst.get(i).getName());
+            if (naam.equals(studentLijst.get(i).getName()) && leeftijd.equals(studentLijst.get(i).getLeeftijd()) &&
+                    studentNummer.equals(studentLijst.get(i).getStudentNummer())) {
+                studentLijst.remove(i);
+                System.out.printf("Student: %s (%d) Leeftijd: %d succesvol verwijderd.");
+                teller++;
+            }
+        }
+        if (teller == 0){
+            System.out.println("Student niet gevonden.");
+        }
+    }
+
+    public static void printStudenten(){
+
+        for (int i = 0; i < studentLijst.size(); i++) {
+
                 System.out.println("Naam: " + studentLijst.get(i).getName() + "\nLeeftijd: " + studentLijst.get(i).getLeeftijd()
                  + "\nstudentNummer: " + studentLijst.get(i).getStudentNummer() + "\n");
-            }
 
         }
     }
-    //PersonsList.StudentenLijst();
-    //PersonsList.printStudenten();
 }
