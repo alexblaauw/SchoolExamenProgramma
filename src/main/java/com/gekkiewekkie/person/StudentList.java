@@ -32,15 +32,16 @@ public class StudentList {
         studentLijst.add(new Student(naam, leeftijd, studentNummer));
 
     }
-
-    public void removeStudent(String naam, Integer leeftijd, Integer studentNummer){
+   
+    public static void removeStudent(String naam, Integer leeftijd, Integer studentNummer){
         int teller = 0;
         for (int i = 0; i < studentLijst.size(); i++) {
             if (naam.equals(studentLijst.get(i).getName()) && leeftijd.equals(studentLijst.get(i).getLeeftijd()) &&
                     studentNummer.equals(studentLijst.get(i).getStudentNummer())) {
-                studentLijst.remove(i);
-                System.out.printf("Student: %s (%d) Leeftijd: %d succesvol verwijderd.");
+                System.out.printf("Student: %s (%d) Leeftijd: %d succesvol verwijderd.", studentLijst.get(i).getName(),
+                        studentLijst.get(i).getLeeftijd(), studentLijst.get(i).getStudentNummer());
                 teller++;
+                studentLijst.remove(i);
             }
         }
         if (teller == 0){

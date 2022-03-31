@@ -8,6 +8,7 @@ import com.gekkiewekkie.person.StudentList;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
 
     /*
     de main geeft een menu waarin je kan kiezen voor bepaalde acties.
@@ -32,10 +33,18 @@ public class Main {
 
     public static void nieuweStudentInschrijven(){
 
+
     }
 
     public static void studentVerwijderen(){
-
+        System.out.println("Voer de naam van de student in:");
+        String naam = scanner.nextLine();
+        System.out.println("Voer de leeftijd van de student in");
+        Integer leeftijd = scanner.nextInt();
+        System.out.println("Voer het leerlingnummer van de student in:");
+        Integer leerlingnummer = scanner.nextInt();
+        StudentList.removeStudent(naam, leeftijd, leerlingnummer);
+        scanner.nextLine();
     }
 
     public static void examenAfnemen() {
