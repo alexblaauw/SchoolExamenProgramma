@@ -1,5 +1,6 @@
 package com.gekkiewekkie.exam;
 
+import com.gekkiewekkie.commandline.core.CommandLineChoice;
 import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
 import com.gekkiewekkie.exam.ResultIOHandler;
 import com.gekkiewekkie.person.Student;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 public class Examen {
     private static ArrayList<Examen> examenLijst = new ArrayList();
-    private ArrayList<> vragenLijst;
+    private ArrayList<CommandLineChoice> vragenLijst;
     private static int slaagPercentage = 55;
     private ArrayList<Student> geslaagden = new ArrayList();
     private String naam;

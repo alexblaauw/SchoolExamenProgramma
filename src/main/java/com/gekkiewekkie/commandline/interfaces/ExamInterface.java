@@ -1,6 +1,6 @@
 package com.gekkiewekkie.commandline.interfaces;
 
-import com.gekkiewekkie.Examen;
+import com.gekkiewekkie.exam.Examen;
 import com.gekkiewekkie.Main;
 import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
 
@@ -13,7 +13,7 @@ public class ExamInterface implements IInterface {
         examChoice.initChoice();
 
         int response = examChoice.awaitResponse();
-        Examen Examen1 = new Examen(3);
+        /*Examen Examen1 = new Examen(3);
         Examen Examen2 = new Examen(3);
         switch (response) {
             case 0:
@@ -26,6 +26,6 @@ public class ExamInterface implements IInterface {
                 MainInterface mainInterface = new MainInterface();
                 mainInterface.runInterface();
                 break;
-        }
+        }*/
     }
 }
