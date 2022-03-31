@@ -5,13 +5,34 @@ import com.gekkiewekkie.exam.ResultIOHandler;
 
 import java.util.ArrayList;
 
-public class Examen {
-    private int aantalVragen;
-    private int totaalScore;
-    private String name;
+class Examen {
+    int aantalVragen;
+    int totaalScore;
 
     public Examen(int aantalVragen) {
         this.aantalVragen = aantalVragen;
+        MultipleNumberChoice examenkeuze;
+        examenkeuze = new MultipleNumberChoice("Kies welk examen u wilt maken:",
+                "Examen 1: Kennis en inzicht",
+                "Examen 2: Speciale verkeerssituaties",
+                "Cancel");
+        examenkeuze.initChoice();
+        int keuze = examenkeuze.awaitResponse();
+        if (keuze == 0) {
+            System.out.println();
+            Examen1();
+        }
+        if (keuze == 1) {
+            System.out.println();
+            Examen2();
+        }
+        if (keuze == 2) {
+            return;
+        }
+        else {
+            System.out.println("Geen geldige keuze");
+            return;
+        }
     }
 
     public void Examen1() {
