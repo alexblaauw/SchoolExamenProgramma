@@ -27,9 +27,10 @@ public class StudentList {
       //  studentLijst.add(new Teacher(naam, leeftijd));
 
     //}
-    public void addStudent(String naam, int leeftijd, int studentNummer){
+    public static void addStudent(String naam, int leeftijd, int studentNummer){
 
         studentLijst.add(new Student(naam, leeftijd, studentNummer));
+        System.out.println("Student succesvol toegevoegd.");
 
     }
    
