@@ -24,6 +24,11 @@ public class StudentList {
 
 
     }
+
+    public static ArrayList<Student> getStudentLijst() {
+        return studentLijst;
+    }
+
     //public void addTeacher(String naam, int leeftijd){
 
       //  studentLijst.add(new Teacher(naam, leeftijd));
