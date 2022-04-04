@@ -31,7 +31,7 @@ public class Examen {
         }
     }
 
-    public ArrayList<Examen> getExamenLijst() {
+    public static ArrayList<Examen> getExamenLijst() {
         return examenLijst;
     }
 
