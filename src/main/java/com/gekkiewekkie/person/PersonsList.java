@@ -4,9 +4,13 @@ package com.gekkiewekkie.person;
 import java.util.ArrayList;
 
 public class PersonsList {
-    private static ArrayList<Person> personenLijst = new ArrayList<Person>();
+    private static ArrayList<Person> personenLijst;
 
-    public static void StudentenLijst() {
+    public static ArrayList<Person> StudentenLijst() {
+        if (personenLijst != null) return personenLijst;
+
+        personenLijst = new ArrayList<>();
+
         personenLijst.add(new Teacher("Henk", 65));
         personenLijst.add(new Teacher("Natasja", 27));
         personenLijst.add(new Teacher("Jonas", 48));
@@ -20,7 +24,7 @@ public class PersonsList {
         personenLijst.add(new Student("Mees", 20, 3140584));
         personenLijst.add(new Student("Annika", 18, 2348095));
 
-
+        return personenLijst;
     }
     public void addTeacher(String naam, int leeftijd){
 

@@ -4,7 +4,11 @@ import com.gekkiewekkie.commandline.interfaces.ExamInterface;
 
 public class StudentHandler {
     public static void lijstStudenten(){
-
+        for (Person person : PersonsList.StudentenLijst()) {
+            if (person instanceof Student) {
+                System.out.println(person.getName() + " (" + ((Student) person).studentNummer + "), " + person.getLeeftijd());
+            }
+        }
     }
 
     public static void nieuweStudentInschrijven(){
