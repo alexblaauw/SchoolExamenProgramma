@@ -2,9 +2,12 @@ package com.gekkiewekkie.commandline.interfaces;
 
 import com.gekkiewekkie.commandline.core.CommandLineChoice;
 import com.gekkiewekkie.commandline.core.MultipleLetterChoice;
+import com.gekkiewekkie.commandline.core.OpenQuestion;
 import com.gekkiewekkie.exam.Examen;
 import com.gekkiewekkie.Main;
 import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
+import com.gekkiewekkie.person.Student;
+import com.gekkiewekkie.person.StudentList;
 
 public class ExamInterface implements IInterface {
     public ExamInterface(Examen... e) {
@@ -13,8 +16,25 @@ public class ExamInterface implements IInterface {
                 "Speciale verkeerssituaties",
                 "Cancel");
         examChoice.initChoice();
-
         int response = examChoice.awaitResponse();
+
+        OpenQuestion studentenVraag = new OpenQuestion("Voer uw studentennummer in: ");
+        boolean correctAntwoord = false;
+        while (!correctAntwoord) {
+            studentenVraag.initQuestion();
+            try {
+                int i = Integer.parseInt(studentenVraag.awaitResponse());
+                for (Student student : StudentList.getStudentLijst()) {
+                    if (student.getStudentNummer() == i) {
+                        correctAntwoord = true;
+                    }
+                }
+                System.out.println("Dit nummer staat niet in het systeem");
+            } catch (NumberFormatException exception) {
+                System.out.println("Dit is geen valide getal");
+            }
+        }
+
         getExam1().examenAfnemen();
         /*Examen Examen1 = new Examen(3);
         Examen Examen2 = new Examen(3);
