@@ -7,6 +7,7 @@ import com.gekkiewekkie.exam.ResultIOHandler;
 import com.gekkiewekkie.person.Student;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Examen {
@@ -42,14 +43,20 @@ public class Examen {
         return geslaagden;
     }
 
-    public void examenAfnemen() {
+    public void examenAfnemen(Student student) {
+        Integer[] resultaten = new Integer[antwoorden.length];
         for (int i = 0; i < vragen.length; i++) {
             vragen[i].initChoice();
-            int antwoord = vragen[i].awaitResponse();
-            if (antwoord == antwoorden[i]) {
+            resultaten[i] = vragen[i].awaitResponse();
+            if (resultaten[i] == antwoorden[i]) {
                 System.out.println("Correct!");
+            } else {
+                System.out.println("Fout!");
             }
         }
+
+        ResultIOHandler fileHandler = new ResultIOHandler();
+        fileHandler.saveArrayList(new ArrayList<>(Arrays.asList(resultaten)),"src/main/resources/exam_.json_" + naam + "_" + student.getStudentNummer());
     }
 
     public double getTotaalScore() {
