@@ -39,8 +39,9 @@ public class StudentList {
         for (int i = 0; i < studentLijst.size(); i++) {
             if (naam.equals(studentLijst.get(i).getName()) && leeftijd.equals(studentLijst.get(i).getLeeftijd()) &&
                     studentNummer.equals(studentLijst.get(i).getStudentNummer())) {
-                System.out.printf("Student: %s (%d) Leeftijd: %d succesvol verwijderd.", studentLijst.get(i).getName(),
-                        studentLijst.get(i).getLeeftijd(), studentLijst.get(i).getStudentNummer());
+                System.out.printf("Student: %s (%d) Leeftijd: %d succesvol verwijderd.\n", studentLijst.get(i).getName(),
+                        studentLijst.get(i).getStudentNummer(),
+                        studentLijst.get(i).getLeeftijd());
                 teller++;
                 studentLijst.remove(i);
             }

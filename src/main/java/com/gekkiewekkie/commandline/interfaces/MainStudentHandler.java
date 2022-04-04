@@ -19,6 +19,8 @@ public class MainStudentHandler {
     }
     public static void lijstStudenten(){
         StudentList.printStudenten();
+        System.out.println("Druk enter als u terug wilt naar het menu.");
+        scanner.nextLine();
 
     }
 
@@ -31,6 +33,9 @@ public class MainStudentHandler {
         Integer leerlingnummer = scanner.nextInt();
         StudentList.addStudent(naam, leeftijd, leerlingnummer);
         scanner.nextLine();
+        System.out.println("Druk enter als u terug wilt naar het menu.");
+        scanner.nextLine();
+
 
     }
 
@@ -42,6 +47,8 @@ public class MainStudentHandler {
         System.out.println("Voer het leerlingnummer van de student in die u wilt verwijderen:");
         Integer leerlingnummer = scanner.nextInt();
         StudentList.removeStudent(naam, leeftijd, leerlingnummer);
+        scanner.nextLine();
+        System.out.println("Druk enter als u terug wilt naar het menu.");
         scanner.nextLine();
     }
 }
