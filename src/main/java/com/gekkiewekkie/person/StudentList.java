@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class StudentList {
     private static ArrayList<Student> studentLijst = new ArrayList<Student>();
 
-    public static void StudentenLijst() {
+    public static ArrayList<Student> StudentenLijst() {
         studentLijst.add(new Student("Henk", 65, 2532452));
         studentLijst.add(new Student("Natasja", 27, 2532452));
         studentLijst.add(new Student("Jonas", 48, 2532452));
@@ -19,6 +19,8 @@ public class StudentList {
         studentLijst.add(new Student("Loes", 20, 1298375));
         studentLijst.add(new Student("Mees", 20, 3140584));
         studentLijst.add(new Student("Annika", 18, 2348095));
+
+        return studentLijst;
 
 
     }
@@ -34,7 +36,7 @@ public class StudentList {
 
     }
    
-    public static void removeStudent(String naam, Integer leeftijd, Integer studentNummer){
+    public static boolean removeStudent(String naam, Integer leeftijd, Integer studentNummer){
         int teller = 0;
         for (int i = 0; i < studentLijst.size(); i++) {
             if (naam.equals(studentLijst.get(i).getName()) && leeftijd.equals(studentLijst.get(i).getLeeftijd()) &&
@@ -44,11 +46,13 @@ public class StudentList {
                         studentLijst.get(i).getLeeftijd());
                 teller++;
                 studentLijst.remove(i);
+                return true;
             }
         }
         if (teller == 0){
             System.out.println("Student niet gevonden.");
         }
+        return false;
     }
 
     public static void printStudenten(){
