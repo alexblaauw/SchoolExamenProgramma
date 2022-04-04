@@ -2,6 +2,7 @@ package com.gekkiewekkie.exam;
 
 import com.gekkiewekkie.commandline.core.CommandLineChoice;
 import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
+import com.gekkiewekkie.commandline.interfaces.IInterface;
 import com.gekkiewekkie.exam.ResultIOHandler;
 import com.gekkiewekkie.person.Student;
 
@@ -10,17 +11,23 @@ import java.util.Scanner;
 
 public class Examen {
     private static ArrayList<Examen> examenLijst = new ArrayList();
-    private ArrayList<CommandLineChoice> vragenLijst;
     private static int slaagPercentage = 55;
     private ArrayList<Student> geslaagden = new ArrayList();
+    private CommandLineChoice[] vragen;
+    private Integer[] antwoorden;
     private String naam;
     private int aantalVragen;
     private int totaalScore = 0;
 
-    public Examen(String naam, int aantalVragen) {
+    public Examen(String naam, CommandLineChoice[] vragen, Integer[] correcteAntwoorden) {
         this.naam = naam;
-        this.aantalVragen = aantalVragen;
-        int soortVraag;
+        this.aantalVragen = vragen.length;
+        this.vragen = vragen;
+        this.antwoorden = correcteAntwoorden;
+
+        if (vragen.length != correcteAntwoorden.length || vragen.length < 1) {
+            throw new ArrayStoreException("Number of questions and number of answers must be the same when intializing Examen");
+        }
     }
 
     public ArrayList<Examen> getExamenLijst() {
@@ -36,10 +43,12 @@ public class Examen {
     }
 
     public void examenAfnemen() {
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < vragenLijst.size(); i++) {
-            System.out.println(vragenLijst.get(i));
-            scanner.next();
+        for (int i = 0; i < vragen.length; i++) {
+            vragen[i].initChoice();
+            int antwoord = vragen[i].awaitResponse();
+            if (antwoord == antwoorden[i]) {
+                System.out.println("Correct!");
+            }
         }
     }
 
