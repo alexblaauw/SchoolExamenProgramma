@@ -17,39 +17,4 @@ public class Main {
         MainInterface mainInterface = new MainInterface();
         mainInterface.runInterface();
     }
-
-    //test
-    public static void lijstExamen(){
-
-    }
-
-    public static void lijstStudenten(){
-
-    }
-
-    public static void nieuweStudentInschrijven(){
-
-    }
-
-    public static void studentVerwijderen(){
-
-    }
-
-    public static void examenAfnemen() {
-        ExamInterface examInterface = new ExamInterface();
-        examInterface.runInterface();
-    }
-
-    public static void isStudentGeslaagdVoorTest(){
-
-    }
-
-    public static void welkeExamensHeeftStudentGehaald(){
-
-    }
-
-    public static void welkeStudentHeeftDeMeesteExamensGehaald(){
-
-    }
-
 }
