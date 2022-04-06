@@ -17,6 +17,12 @@ public class ExamList {
         vragen[0] = new MultipleLetterChoice("What is the average speed of an unladen Swallow?", "I don't know that!", "African or European?");
         antwoorden[0] = 1;
 
+        Examen examen = new Examen("test_examen", vragen, antwoorden);
+        addExamen(examen);
+
+        return new ArrayList<>(examenLijst);
+    }
+
     public Examen getExam1() {
         CommandLineChoice[] vragen = new CommandLineChoice[1];
         Integer[] antwoorden = new Integer[1];
@@ -62,12 +68,6 @@ public class ExamList {
 
         Examen examen = new Examen("Bijzondere Verrichtingen", vragen, antwoorden);
         return examen;
-    }
-
-        Examen examen = new Examen("test_examen", vragen, antwoorden);
-        addExamen(examen);
-
-        return new ArrayList<>(examenLijst);
     }
 
     public static void addExamen(Examen examen) {
