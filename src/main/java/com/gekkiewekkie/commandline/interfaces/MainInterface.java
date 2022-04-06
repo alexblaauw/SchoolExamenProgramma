@@ -19,7 +19,7 @@ public class MainInterface implements IInterface {
                     5) Examen afnemen
                     6) Is student geslaagd voor test?
                     7) Welke examens heeft student gehaald?
-                    8) welke student heeft de meeste examens gehaald? 
+                    8) Welke student heeft de meeste examens gehaald? 
                     0) Exit
                     Uw keuze: """);
             int keuze = scanner.nextInt();
@@ -33,7 +33,7 @@ public class MainInterface implements IInterface {
                 case 7 -> MainStudentHandler.welkeExamensHeeftStudentGehaald();
                 case 8 -> MainStudentHandler.welkeStudentHeeftDeMeesteExamensGehaald();
                 case 0 -> actief = false;
-                default -> System.out.println("maak een goede keuze");
+                default -> System.out.println("Maak een goede keuze");
             }
         }
     }
