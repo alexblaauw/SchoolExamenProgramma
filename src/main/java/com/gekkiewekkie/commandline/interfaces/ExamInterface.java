@@ -2,9 +2,12 @@ package com.gekkiewekkie.commandline.interfaces;
 
 import com.gekkiewekkie.commandline.core.CommandLineChoice;
 import com.gekkiewekkie.commandline.core.MultipleLetterChoice;
+import com.gekkiewekkie.commandline.core.OpenQuestion;
 import com.gekkiewekkie.exam.Examen;
 import com.gekkiewekkie.Main;
 import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
+import com.gekkiewekkie.person.Student;
+import com.gekkiewekkie.person.StudentList;
 
 public class ExamInterface implements IInterface {
     public ExamInterface(Examen... e) {
@@ -13,9 +16,26 @@ public class ExamInterface implements IInterface {
                 "Speciale verkeerssituaties",
                 "Cancel");
         examChoice.initChoice();
-
         int response = examChoice.awaitResponse();
-        getExam1().examenAfnemen();
+
+        OpenQuestion studentenVraag = new OpenQuestion("Voer uw studentennummer in: ");
+        boolean correctAntwoord = false;
+        while (!correctAntwoord) {
+            studentenVraag.initQuestion();
+            try {
+                int i = Integer.parseInt(studentenVraag.awaitResponse());
+                for (Student student : StudentList.getStudentLijst()) {
+                    if (student.getStudentNummer() == i) {
+                        correctAntwoord = true;
+                    }
+                }
+                System.out.println("Dit nummer staat niet in het systeem");
+            } catch (NumberFormatException exception) {
+                System.out.println("Dit is geen valide getal");
+            }
+        }
+
+        getExam1().examenAfnemen(StudentList.getStudentLijst().get(0));
         /*Examen Examen1 = new Examen(3);
         Examen Examen2 = new Examen(3);
         switch (response) {
@@ -38,7 +58,7 @@ public class ExamInterface implements IInterface {
         vragen[0] = new MultipleLetterChoice("What is the average speed of an unladen Swallow?", "I don't know that!", "African or European?");
         antwoorden[0] = 1;
 
-        Examen examen = new Examen("Test Examen", vragen, antwoorden);
+        Examen examen = new Examen("test_examen", vragen, antwoorden);
         return examen;
     }
 }

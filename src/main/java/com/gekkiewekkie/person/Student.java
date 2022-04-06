@@ -1,9 +1,14 @@
     package com.gekkiewekkie.person;
 
+    import com.gekkiewekkie.exam.Examen;
+
+    import java.util.ArrayList;
+
     public class Student {
         private String name;
         private Integer leeftijd;
         private Integer studentNummer;
+        private ArrayList<Examen> gehaaldeExamen = new ArrayList<>();
 
         public Student(String name, Integer leeftijd, Integer studentNummer) {
             this.name = name;
@@ -22,4 +27,6 @@
         public Integer getStudentNummer() {
             return studentNummer;
         }
+
+        public ArrayList<Examen> getGehaaldeExamen() { return gehaaldeExamen; }
     }
