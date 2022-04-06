@@ -55,6 +55,13 @@ public class Examen {
     public double getTotaalScore() {
         return totaalScore / aantalVragen * 100;
     }
+
+    public boolean isGeslaagd(int totaalScore) {
+        if (totaalScore >= getTotaalScore()) {
+            return true;
+        }
+        else return false;
+    }
 }
 
 
