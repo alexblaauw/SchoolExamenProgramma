@@ -29,4 +29,6 @@
         }
 
         public ArrayList<Examen> getGehaaldeExamen() { return gehaaldeExamen; }
+
+        public void addGehaaldeExamen(Examen examen) { gehaaldeExamen.add(examen); }
     }

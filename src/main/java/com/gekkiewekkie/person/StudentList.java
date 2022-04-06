@@ -59,7 +59,7 @@ public class StudentList {
         }
     }
 
-    public Student getStudentByNummer(int studentenNummer) {
+    public static Student getStudentByNummer(int studentenNummer) {
         for (int i = 0; i < studentLijst.size(); i++) {
             if (studentLijst.get(i).getStudentNummer() == studentenNummer) {
                 return studentLijst.get(i);
