@@ -86,7 +86,10 @@ public class MainStudentHandler {
                 meestSuccesvolleStudent.add(studentenLijst.get(i));
             }
         }
-        if(meestSuccesvolleStudent.size() == 1) {
+        if(meesteExamenGehaald == 0){
+            System.out.println("Er zijn nog geen studenten die een examen hebben gehaald.");
+        }
+        else if(meestSuccesvolleStudent.size() == 1) {
             System.out.printf("De student die de meeste examens heeft gehaald is: %s (%d)\n", meestSuccesvolleStudent.get(0).getName(), meestSuccesvolleStudent.get(0).getStudentNummer());
         }else{
             System.out.println("De studenten die de meeste examens hebben gehaald zijn:");
