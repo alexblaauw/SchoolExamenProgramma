@@ -1,6 +1,7 @@
 package com.gekkiewekkie.commandline.interfaces;
 
 import com.gekkiewekkie.commandline.core.OpenQuestion;
+import com.gekkiewekkie.exam.ExamList;
 import com.gekkiewekkie.exam.Examen;
 import com.gekkiewekkie.exam.ResultIOHandler;
 import com.gekkiewekkie.person.Student;
@@ -38,7 +39,35 @@ public class MainStudentHandler {
     }
 
     public static void welkeExamensHeeftStudentGehaald(){
+        ResultIOHandler ioHandler = new ResultIOHandler();
+        int studentenNummer = vraagStudentenNummer();
+        ArrayList<Examen> gehaaldeExamens = new ArrayList<>();
+        for (Examen examen : ExamList.getExamenLijst()) {
+            try {
+                ArrayList<Integer> answers = ioHandler.loadArrayList("src/main/resources/exam_" + examen.getNaam() + "_" + studentenNummer + ".json");
 
+                int score = 0;
+                for (int i = 0; i < answers.size(); i++) {
+                    int answer = answers.get(i);
+                    if (answer == examen.getCorrectAntwoord(i)) {
+                        score++;
+                    }
+                }
+                double resultaat = score / examen.getAantalVragen();
+                if (resultaat * 100 > examen.getSlaagPercentage()) {
+                    gehaaldeExamens.add(examen);
+                }
+            } catch (FileNotFoundException e) {}
+        }
+
+        for (Examen examen : gehaaldeExamens) {
+            System.out.println(examen.getNaam() + " is gehaald!");
+        }
+        if (gehaaldeExamens.size() < 1) {
+            System.out.println("Deze student heeft geen examens gehaald.");
+        }
+
+        System.out.print("\n");
     }
 
     public static void welkeStudentHeeftDeMeesteExamensGehaald(){
