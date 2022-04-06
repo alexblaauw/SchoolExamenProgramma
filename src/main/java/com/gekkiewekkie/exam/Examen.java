@@ -43,7 +43,15 @@ public class Examen {
         return geslaagden;
     }
 
-    public void examenAfnemen(Student student) {
+    public Integer getAantalVragen() {
+        return aantalVragen;
+    }
+
+    public Integer getCorrectAntwoord(int vraagNummer) {
+        return antwoorden[vraagNummer];
+    }
+
+    public void examenAfnemen(int studentenNummer) {
         Integer[] resultaten = new Integer[antwoorden.length];
         for (int i = 0; i < vragen.length; i++) {
             vragen[i].initChoice();
@@ -56,7 +64,7 @@ public class Examen {
         }
 
         ResultIOHandler fileHandler = new ResultIOHandler();
-        fileHandler.saveArrayList(new ArrayList<>(Arrays.asList(resultaten)),"src/main/resources/exam_.json_" + naam + "_" + student.getStudentNummer());
+        fileHandler.saveArrayList(new ArrayList<>(Arrays.asList(resultaten)),"src/main/resources/exam_" + naam + "_" + studentenNummer + ".json");
     }
 
     public double getTotaalScore() {
@@ -68,6 +76,10 @@ public class Examen {
             return true;
         }
         else return false;
+    }
+
+    public int getSlaagPercentage() {
+        return slaagPercentage;
     }
 }
 

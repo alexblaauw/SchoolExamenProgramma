@@ -22,6 +22,10 @@ public class MultipleNumberChoice extends CommandLineChoice {
     public MultipleNumberChoice(String title, int choiceCount, ArrayList<String> choiceTitles) {
         this(title, choiceCount, choiceTitles, false);
     }
+    public MultipleNumberChoice(String title, ArrayList<String> choiceTitles) {
+        this(title, choiceTitles.size(), choiceTitles);
+        this.endingZero = endingZero;
+    }
 
     @Override
     public void initChoice() {
@@ -49,7 +53,7 @@ public class MultipleNumberChoice extends CommandLineChoice {
                 if (output == 0 && endingZero) {
                     output = getChoiceCount();
                     break;
-                } else if (output != 0) {
+                } else if (output != 0 && output <= getChoiceCount()) {
                     break;
                 } else {
                     System.out.println("Failed to parse response '" + output + "'");

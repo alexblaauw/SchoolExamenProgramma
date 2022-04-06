@@ -6,9 +6,16 @@ import com.gekkiewekkie.commandline.core.MultipleLetterChoice;
 import java.util.ArrayList;
 
 public class ExamList {
-    private ArrayList<Examen> examenLijst;
+    private static ArrayList<Examen> examenLijst;
 
-    //public ArrayList<Examen> getExamenLijst() {
+    public static ArrayList<Examen> getExamenLijst() {
+        if (examenLijst != null) return new ArrayList<>(examenLijst);
+        examenLijst = new ArrayList<>();
+
+        CommandLineChoice[] vragen = new CommandLineChoice[1];
+        Integer[] antwoorden = new Integer[1];
+        vragen[0] = new MultipleLetterChoice("What is the average speed of an unladen Swallow?", "I don't know that!", "African or European?");
+        antwoorden[0] = 1;
 
     public Examen getExam1() {
         CommandLineChoice[] vragen = new CommandLineChoice[1];
@@ -57,5 +64,13 @@ public class ExamList {
         return examen;
     }
 
-    //}
+        Examen examen = new Examen("test_examen", vragen, antwoorden);
+        addExamen(examen);
+
+        return new ArrayList<>(examenLijst);
+    }
+
+    public static void addExamen(Examen examen) {
+        examenLijst.add(examen);
+    }
 }

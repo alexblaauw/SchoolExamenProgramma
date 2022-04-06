@@ -1,16 +1,40 @@
 package com.gekkiewekkie.commandline.interfaces;
 
+import com.gekkiewekkie.commandline.core.OpenQuestion;
 import com.gekkiewekkie.exam.Examen;
+import com.gekkiewekkie.exam.ResultIOHandler;
 import com.gekkiewekkie.person.Student;
 import com.gekkiewekkie.person.StudentList;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainStudentHandler {
     private static Scanner scanner = new Scanner(System.in);
     public static void isStudentGeslaagdVoorTest(){
-
+        int studentenNummer = vraagStudentenNummer();
+        Examen examen = ExamInterface.examChoice();
+        ResultIOHandler ioHandler = new ResultIOHandler();
+        try {
+            ArrayList<Integer> answers = ioHandler.loadArrayList("src/main/resources/exam_" + examen.getNaam() + "_" + studentenNummer + ".json");
+            int score = 0;
+            for (int i = 0; i < answers.size(); i++) {
+                int answer = answers.get(i);
+                if (answer == examen.getCorrectAntwoord(i)) {
+                    score++;
+                }
+            }
+            double resultaat = score / examen.getAantalVragen();
+            if (resultaat * 100 > examen.getSlaagPercentage()) {
+                System.out.println("Geslaagd!");
+            }
+            else {
+                System.out.println("Gefaald!");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Deze student heeft dit examen niet gemaakt.");
+        }
     }
 
     public static void welkeExamensHeeftStudentGehaald(){
@@ -77,5 +101,35 @@ public class MainStudentHandler {
         scanner.nextLine();
         System.out.println("Druk enter als u terug wilt naar het menu.");
         scanner.nextLine();
+    }
+
+    public static int vraagStudentenNummer() {
+        OpenQuestion studentenVraag = new OpenQuestion("Voer uw studentennummer in: ");
+        boolean correctAntwoord = true;
+        boolean loop = true;
+        int antwoord = -1;
+        while (loop) {
+            if (!correctAntwoord) {
+                System.out.println("Dit nummer staat niet in het systeem");
+            }
+
+            studentenVraag.initQuestion();
+            try {
+                antwoord = Integer.parseInt(studentenVraag.awaitResponse());
+                for (Student student : StudentList.getStudentLijst()) {
+                    if (student.getStudentNummer() != antwoord) {
+                        correctAntwoord = false;
+                    }
+                    else {
+                        loop = false;
+                    }
+                }
+
+            } catch (NumberFormatException exception) {
+                System.out.println("Dit is geen valide getal");
+            }
+        }
+
+        return antwoord;
     }
 }

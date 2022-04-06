@@ -29,17 +29,18 @@ public class ResultIOHandler {
         }
     }
 
-    public ArrayList<Integer> loadArrayList(String filePath) {
+    public ArrayList<Integer> loadArrayList(String filePath) throws FileNotFoundException {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.setPrettyPrinting().create();
-        try (Reader reader = new FileReader(filePath)){
-            return gson.fromJson(reader, ArrayList.class);
+        Reader reader = new FileReader(filePath);
+
+        //gson.fromJson() leest Integers als Doubles dus we moeten de arraylist eerst handmatig omzetten
+        ArrayList<Double> input = gson.fromJson(reader, ArrayList.class);
+        ArrayList<Integer> output = new ArrayList<>();
+        for (int i = 0; i < input.size(); i++) {
+            output.add(input.get(i).intValue());
         }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+
+        return output;
     }
 }
