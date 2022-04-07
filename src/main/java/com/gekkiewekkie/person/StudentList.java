@@ -7,18 +7,18 @@ public class StudentList {
     private static ArrayList<Student> studentLijst = new ArrayList<>();
 
     public static ArrayList<Student> StudentenLijst() {
-        studentLijst.add(new Student("Henk", 35, 21234409));
-        studentLijst.add(new Student("Natasja", 27, 2462652));
-        studentLijst.add(new Student("Jonas", 42, 2557052));
-        studentLijst.add(new Student("Liesanne", 28, 7560455));
-        studentLijst.add(new Student("Hendrik", 35, 2805852));
+        studentLijst.add(new Student("Henk Hofwegen", 35, 21234409));
+        studentLijst.add(new Student("Natasja de Ven", 27, 2462652));
+        studentLijst.add(new Student("Jonas Abbing", 42, 2557052));
+        studentLijst.add(new Student("Liesanne Reinders", 28, 7560455));
+        studentLijst.add(new Student("Hendrik de Wit", 35, 2805852));
 
 
-        studentLijst.add(new Student("Rob", 19, 2532402));
-        studentLijst.add(new Student("Ruud", 17, 1238495));
-        studentLijst.add(new Student("Loes", 20, 1290375));
-        studentLijst.add(new Student("Mees", 20, 3100584));
-        studentLijst.add(new Student("Annika", 18, 2348095));
+        studentLijst.add(new Student("Lars Post", 19, 2532402));
+        studentLijst.add(new Student("Ruud van Heijningen", 17, 1238495));
+        studentLijst.add(new Student("Loes Houtkooper", 20, 1290375));
+        studentLijst.add(new Student("Mees Bakker", 20, 3100584));
+        studentLijst.add(new Student("Annika Blauw", 18, 2348095));
 
         return studentLijst;
 
