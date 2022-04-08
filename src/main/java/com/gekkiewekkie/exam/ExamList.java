@@ -2,6 +2,7 @@ package com.gekkiewekkie.exam;
 
 import com.gekkiewekkie.commandline.core.CommandLineChoice;
 import com.gekkiewekkie.commandline.core.MultipleLetterChoice;
+import com.gekkiewekkie.commandline.core.YesNoChoice;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,8 @@ public class ExamList {
         antwoorden[1] = 2;
         vragen[2] = new MultipleLetterChoice("Welk licht kun je het beste aanzetten bij hele zware regenval?", "Mistlicht","Groot licht","Stadslicht","Dimlicht");
         antwoorden[2] = 3;
+        vragen[3] = new YesNoChoice("Als je aan de kant staat op de snelweg, is het plaatsen van een gevarendriehoek verplicht?","Ja, het is verplicht","Nee het is niet verplicht, maar het is wel beter");
+        antwoorden[3] = 0;
 
         examen = new Examen("speciale_verkeerssituaties", vragen, antwoorden);
         addExamen(examen);
@@ -58,7 +61,7 @@ public class ExamList {
         antwoorden[0] = 2;
         vragen[1] = new MultipleLetterChoice("Wat is de volgorde van je acties bij het verwisselen van baan naar links?", "Kijken in je binnenspiegel, rechter buitenspiegel, linker buitenspiegel, links over je schouder kijken, en gaan (als het kan)", "Kijken in je binnenspiegel, linker buitenspiegel, over je schouder, en gaan (als het kan)", "Kijken in je binnenspiegel, linker buitenspiegel, en gaan (als het kan)");
         antwoorden[1] = 1;
-        vragen[2] = new MultipleLetterChoice("Wat kun je het beste doen als je moet keren op een rustige weg op een erf?", "Gelijk keren met 3 steken", "Even doordijden tot je bij een breder stuk (kruispunt) komt om te keren met een halve draai", "Doorrijden tot je bij een rotonde komt om te keren");
+        vragen[2] = new MultipleLetterChoice("Wat kun je het beste doen als je moet keren op een rustige weg?", "Gelijk keren met 3 steken", "Even doordijden tot je bij een breder stuk (kruispunt) komt om te keren met een halve draai", "Doorrijden tot je bij een rotonde komt om te keren");
         antwoorden[2] = 1;
 
         examen = new Examen("bijzondere_verrichtingen", vragen, antwoorden);
