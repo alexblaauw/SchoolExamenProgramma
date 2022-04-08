@@ -39,8 +39,8 @@ public class ExamList {
         addExamen(examen);
 
         //speciale_verkeerssituaties
-        vragen = new CommandLineChoice[3];
-        antwoorden = new Integer[3];
+        vragen = new CommandLineChoice[4];
+        antwoorden = new Integer[4];
 
         vragen[0] = new MultipleLetterChoice("Mag een bus een kolonne (militaire voertuigen groep) doorsnijden?", "Ja", "Nee");
         antwoorden[0] = 1;
