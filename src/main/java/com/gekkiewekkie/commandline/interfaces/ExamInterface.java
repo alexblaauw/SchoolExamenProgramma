@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ExamInterface implements IInterface {
     public ExamInterface(Examen... e) {
-        int studentenNummer = MainStudentHandler.vraagStudentenNummer();
+        int studentenNummer = Main.vraagStudentenNummer();
         examChoice().examenAfnemen(studentenNummer);
     }
 
