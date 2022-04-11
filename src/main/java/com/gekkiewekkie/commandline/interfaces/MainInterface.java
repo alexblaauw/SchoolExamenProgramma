@@ -4,8 +4,7 @@ import com.gekkiewekkie.Main;
 
 import java.util.Scanner;
 
-public class MainInterface implements IInterface {
-    @Override
+public class MainInterface {
     public void runInterface() {
         Scanner scanner = new Scanner(System.in);
         boolean actief = true;

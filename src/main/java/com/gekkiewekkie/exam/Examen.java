@@ -1,9 +1,6 @@
 package com.gekkiewekkie.exam;
 
 import com.gekkiewekkie.commandline.core.CommandLineChoice;
-import com.gekkiewekkie.commandline.core.MultipleNumberChoice;
-import com.gekkiewekkie.commandline.interfaces.IInterface;
-import com.gekkiewekkie.exam.ResultIOHandler;
 import com.gekkiewekkie.person.Student;
 import com.gekkiewekkie.person.StudentList;
 

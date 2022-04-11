@@ -13,7 +13,7 @@ import com.gekkiewekkie.person.StudentList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExamInterface implements IInterface {
+public class ExamInterface {
     public ExamInterface(Examen... e) {
         int studentenNummer = Main.vraagStudentenNummer();
         examChoice().examenAfnemen(studentenNummer);

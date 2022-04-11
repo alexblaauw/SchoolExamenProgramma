@@ -72,8 +72,7 @@ public class Main {
     }
 
     public static void examenAfnemen() {
-        ExamInterface examInterface = new ExamInterface();
-        examInterface.runInterface();
+        new ExamInterface();
     }
 
     public static void isStudentGeslaagdVoorTest(){
