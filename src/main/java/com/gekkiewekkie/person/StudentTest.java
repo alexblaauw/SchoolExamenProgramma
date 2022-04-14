@@ -18,7 +18,8 @@ public class StudentTest {
         /**
          * testgetStudentenLijst test de methode getStudentenLijst waar de studentlijst gereturned wordt. Dit test dus
          * dat alle studenten in de studentenlijst vergeleken worden met de hier aangemaakte studentenlijst. Als dit
-         * correct is wordt de met elkaar vergeleken studentenlijst gereturned. Dit vertoont de bruikbaarheid van de code
+         * correct is wordt de met elkaar vergeleken studentenlijst gereturned. Dit vertoont de bruikbaarheid van de
+         * code.
          */
 
         // Arrange
