@@ -10,17 +10,17 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class StudentTest {
+
     @Test
     public void testRemoveStudent() {
         // Arrange
-        boolean expectedValue = true;
-
+        Student student;
+        StudentList.removeStudent("Pietje", 18, 23109043);
+        student = StudentList.getStudentByNummer(23109043);
         // Act
-        boolean result = StudentList.removeStudent("Pietje", 18, 23109043);
 
         // Assert
-        assertEquals(expectedValue, result);
-        assertTrue(result);
+        assertTrue(StudentList.getStudentLijst().contains(student));
 
         //
     }
@@ -64,7 +64,7 @@ public class StudentTest {
 
         // Assert
         assertEquals(expectedValue, result);
-
+        assert
         //
     }
 
@@ -83,21 +83,10 @@ public class StudentTest {
     @Test
     void testAddExamen(){
         // Arrange
-
+        Examen examen;
+        ExamList.addExamen(examen);
+        examen = ExamList.
         // Act
-        ExamList.addExamen();
-
-        // Assert
-
-        //
-    }
-
-    @Test
-    void testPrintStudenten() {
-        //Arrange
-
-        // Act
-        StudentList.printStudenten();
 
         // Assert
 
