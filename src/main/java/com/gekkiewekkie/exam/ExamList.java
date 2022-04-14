@@ -47,9 +47,9 @@ public class ExamList {
         vragen[1] = new MultipleLetterChoice("Bij zware mist, bij hoeveel meter zicht mag je je mistlicht aanzetten?","vanaf 25 meter zicht","vanaf 45 meter zicht","vanaf 50 meter zicht","vanaf 60 meter zicht");
         antwoorden[1] = 2;
         vragen[2] = new MultipleLetterChoice("Welk licht kun je het beste aanzetten bij hele zware regenval?", "Mistlicht","Groot licht","Stadslicht","Dimlicht");
-        antwoorden[2] = 3;
+        antwoorden[2] = 2;
         vragen[3] = new YesNoChoice("Als je aan de kant staat op de snelweg, is het plaatsen van een gevarendriehoek verplicht?","Ja, het is verplicht","Nee het is niet verplicht, maar het is wel beter");
-        antwoorden[3] = 0;
+        antwoorden[3] = 1;
 
         examen = new Examen("speciale_verkeerssituaties", vragen, antwoorden);
         addExamen(examen);
