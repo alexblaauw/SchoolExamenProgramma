@@ -16,7 +16,9 @@ public class StudentTest {
     @Test
     public void testGetStudentenLijst(){
         /**
-         *
+         * testgetStudentenLijst test de methode getStudentenLijst waar de studentlijst gereturned wordt. Dit test dus
+         * dat alle studenten in de studentenlijst vergeleken worden met de hier aangemaakte studentenlijst. Als dit
+         * correct is wordt de met elkaar vergeleken studentenlijst gereturned. Dit vertoont de bruikbaarheid van de code
          */
 
         // Arrange
@@ -39,7 +41,7 @@ public class StudentTest {
          * dat student Henk Hofwegen met leeftijd 35 en studentnummer 21234409 verwijdert wordt uit de studentenlijst.
          * Als de test uitgevoerd wordt, wordt eerst de student verwijdert, hierna kijkt de test of de student
          * daadwerkelijk nog in de studentenlijst staat en als dat niet zo is, is de student correct en volledig
-         * verwijdert.
+         * verwijdert. De test ondersteunt de kwaliteit van de code.
          */
 
         // Arrange
@@ -59,7 +61,8 @@ public class StudentTest {
          * testAddStudent test de methode addStudent waarin een nieuwe student toegevoegd wordt aan de studentenlijst.
          * Er wordt dus getest dat Robin van Genderen met leeftijd 18 en studentnummer 12345987 toegevoegd kan worden
          * in de studentenlijst. Als de test uitgevoerd wordt, wordt er een nieuwe student toegevoegd en als de
-         * studentenlijst de student bevat, is de student correct toegevoegd.
+         * studentenlijst de student bevat, is de student correct toegevoegd. De test vertoont dat de code voldoet aan
+         * de eisen.
          */
 
         // Arrange
@@ -77,7 +80,11 @@ public class StudentTest {
     @Test
     void testGetStudentenByNummer() {
         /**
-         * testGetStudentenByNummer
+         * testGetStudentenByNummer test de methode getStudentenByNummer waarin studenten door hun studentennummer
+         * worden gereturned. Er wordt vertoond dat studentennummer 21234409 gelijk staat aan het studentennummer van
+         * student uit studentenlijst (ArrayList (0)). Dus als de test uitgevoerd is worden de beiden studentennummers
+         * vergeleken met elkaar en als ze gelijk zijn worden ze gereturned anders wordt er null teruggegeven. De test
+         * toont de bruikbaarheid van de gechreven code aan.
          */
 
         // Arrange
