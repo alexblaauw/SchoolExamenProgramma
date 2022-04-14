@@ -28,6 +28,7 @@ public class Main {
         mainInterface.runInterface();
     }
 
+
     public static void lijstExamen(){
         for (Examen examen : ExamList.getExamenLijst()) {
             System.out.println(examen.getNaam() + ":");
@@ -88,7 +89,7 @@ public class Main {
                     score++;
                 }
             }
-            double resultaat = score / examen.getAantalVragen();
+            double resultaat = score / (double) examen.getAantalVragen();
             if (resultaat * 100 > examen.getSlaagPercentage()) {
                 System.out.println("Geslaagd!");
             }
@@ -115,7 +116,7 @@ public class Main {
                         score++;
                     }
                 }
-                double resultaat = score / examen.getAantalVragen();
+                double resultaat = score / (double) examen.getAantalVragen();
                 if (resultaat * 100 > examen.getSlaagPercentage()) {
                     gehaaldeExamens.add(examen);
                 }

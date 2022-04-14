@@ -63,7 +63,7 @@ public class Examen {
             }
         }
 
-        if ((score / aantalVragen) * 100 > slaagPercentage) {
+        if ((score / (double) aantalVragen) * 100 > slaagPercentage) {
             Student student = StudentList.getStudentByNummer(studentenNummer);
             student.addGehaaldeExamen(this);
         }
@@ -72,7 +72,7 @@ public class Examen {
     }
 
     public double getTotaalScore() {
-        return totaalScore / aantalVragen * 100;
+        return totaalScore / (double) aantalVragen * 100;
     }
 
     public boolean isGeslaagd(int totaalScore) {
