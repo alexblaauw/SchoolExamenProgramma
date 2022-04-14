@@ -14,7 +14,9 @@ public class ExamTest {
     @Test
     void testGetExamenLijst(){
         /**
-         * testGetExamenLijst
+         * testGetExamenLijst test de methode getExamenLijst waarin alle examens geïnitieerd worden.
+         * Deze methode geeft de examenlijst terug als de examenlijst geïnitieerd is.
+         * Hiermee kunnen we examens binnen de examenlijst bereiken.
          */
 
         // Arrange
@@ -33,7 +35,9 @@ public class ExamTest {
     @Test
     void testAddExamen(){
         /**
-         * testAddExamen
+         * testAddExamen test de methode addExamen waarin een nieuw Examen toegevoegd wordt aan de examen.
+         * Er wordt dus gecontroleerd of het examen is toegevoegd door te kijken naar de examenlijst en of het nieuwe
+         * examen er in staat. Hiermee kunnen we zien of we zelf examens kunnen toevoegen.
          */
 
         // Arrange
